@@ -1,0 +1,36 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: ../infrastructure/docker/Dockerfile.backend
+    container_name: saw-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./storage:/app/storage
+    environment:
+      - SAW_SECRET_KEY=sovereign-workbench-super-secret-key-change-in-production-2026
+      - DATABASE_URL=sqlite+aiosqlite:///storage/workbench.db
+      - OLLAMA_BASE_URL=http://ollama:11434
+      - AIR_GAPPED_MODE=true
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: ../infrastructure/docker/Dockerfile.frontend
+    container_name: saw-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: saw-ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ./storage/ollama_models:/root/.ollama
+    restart: unless-stopped
