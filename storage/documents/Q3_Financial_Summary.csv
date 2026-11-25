@@ -1,0 +1,8 @@
+Department,Q1_Budget,Q2_Budget,Q3_Budget,Actual_Spend,Variance,Efficiency_Score,Status
+AI Research,150000,165000,180000,172500,-7500,95.8,Approved
+Infrastructure,320000,340000,350000,341000,-9000,97.4,Approved
+Security Compliance,85000,90000,95000,91200,-3800,96.0,Approved
+Data Engineering,120000,130000,140000,148000,+8000,94.3,Under Review
+Model Operations,210000,225000,240000,233000,-7000,97.1,Approved
+Product Development,180000,195000,210000,205000,-5000,97.6,Approved
+Total Enterprise,1065000,1145000,1215000,1190700,-24300,96.4,Approved

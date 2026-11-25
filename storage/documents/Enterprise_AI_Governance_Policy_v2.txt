@@ -1,0 +1,25 @@
+SOVEREIGN ENTERPRISE AI GOVERNANCE AND SECURITY POLICY
+Document Control Identifier: POL-AI-2026-V2
+Classification: RESTRICTED ENTERPRISE
+Effective Date: November 20, 2026
+
+Section 1: Purpose and Operational Scope
+1.1 The purpose of this policy is to establish binding rules for the procurement, deployment, operation, and retirement of artificial intelligence models, autonomous agents, and multimodal reasoning systems across all operational divisions.
+1.2 All AI workloads must be executed strictly within organization-owned hardware infrastructure. Zero exceptions are permitted for transmitting proprietary data to public cloud LLM endpoints.
+1.3 Multimodal processing pipelines for images, audio, and video streams must verify model capability headers prior to decoding binary payloads.
+
+Section 2: Data Residency and Vector Retrieval
+2.1 All unstructured documents ingested for Retrieval-Augmented Generation (RAG) must reside in local encrypted block storage volumes using AES-256 encryption.
+2.2 Vector embeddings must be generated using approved on-premise embedding weights. Cross-tenant retrieval is prevented by resource-level access control lists.
+2.3 Grounded citations must accompany every synthetic response generated from private knowledge bases, citing the exact document name, page number, and section title.
+2.4 Vector collections must support cryptographic deletion, completely purging chunk vectors and derived embeddings within 24 hours of document removal.
+
+Section 3: Autonomous Agent Safeguards and Human-in-the-Loop
+3.1 Autonomous agents must operate within bounded execution step limits (maximum 15 steps per invocation for complex multi-agent graphs).
+3.2 Any agent tool that performs data modification, database mutations, external HTTP transmissions, or arbitrary code evaluation requires mandatory human approval prior to execution.
+3.3 Sandboxed code interpreters must execute within isolated container environments with strict resource constraints and a maximum timeout of 45 seconds.
+3.4 Prompt injection defense filters must sanitize all tool inputs and external search payloads before execution.
+
+Section 4: Audit Trails and Incident Management
+4.1 The platform must maintain immutable audit logs of all model queries, agent step decisions, and administrative role assignments for a minimum retention window of 730 days.
+4.2 Correlation identifiers must be propagated across all API requests and model gateway invocations to ensure complete observability.

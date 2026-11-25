@@ -24,12 +24,15 @@ storage/*.db
 storage/*.db-journal
 storage/uploads/*
 !storage/uploads/.gitkeep
-storage/documents/*
-!storage/documents/.gitkeep
 storage/exports/*
 !storage/exports/.gitkeep
 storage/ollama_models/*
 !storage/ollama_models/.gitkeep
+
+# Allow sample documents
+!storage/documents/*.txt
+!storage/documents/*.csv
+!storage/documents/.gitkeep
 
 # IDE and OS
 .DS_Store

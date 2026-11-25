@@ -1,0 +1,22 @@
+SOVEREIGN ENTERPRISE AI GOVERNANCE AND SECURITY POLICY
+Document Control Identifier: POL-AI-2026-V1
+Classification: INTERNAL CONFIDENTIAL
+Effective Date: January 15, 2026
+
+Section 1: Purpose and Operational Scope
+1.1 The purpose of this policy is to establish binding rules for the procurement, deployment, operation, and retirement of artificial intelligence models, autonomous agents, and multimodal reasoning systems across all operational divisions.
+1.2 All AI workloads must be executed strictly within organization-owned hardware infrastructure. The transmission of user prompts, document embeddings, or generated model outputs to external third-party cloud APIs is strictly prohibited without written authorization from the Chief Information Security Officer (CISO).
+
+Section 2: Data Residency and Vector Retrieval
+2.1 All unstructured documents ingested for Retrieval-Augmented Generation (RAG) must reside in local encrypted block storage volumes using AES-256 encryption.
+2.2 Vector embeddings must be generated using approved on-premise embedding weights. Cross-tenant retrieval is prevented by resource-level access control lists.
+2.3 Grounded citations must accompany every synthetic response generated from private knowledge bases, citing the exact document name, page number, and section title.
+
+Section 3: Autonomous Agent Safeguards and Human-in-the-Loop
+3.1 Autonomous agents must operate within bounded execution step limits (maximum 10 steps per invocation by default).
+3.2 Any agent tool that performs data modification, database mutations, external HTTP transmissions, or arbitrary code evaluation requires mandatory human approval prior to execution.
+3.3 Sandboxed code interpreters must execute within isolated sub-processes with restricted standard library namespaces, memory bounds, and a maximum execution timeout of 30 seconds.
+
+Section 4: Audit Trails and Incident Management
+4.1 The platform must maintain immutable audit logs of all model queries, agent step decisions, and administrative role assignments for a minimum retention window of 365 days.
+4.2 Correlation identifiers must be propagated across all API requests and model gateway invocations to ensure complete observability.
